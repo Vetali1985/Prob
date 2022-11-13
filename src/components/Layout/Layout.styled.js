@@ -13,6 +13,7 @@ border: 1px solid black;
     width: 320px;
   &.active {
     color: orange;
+    background-color:white;
     
 
   }
