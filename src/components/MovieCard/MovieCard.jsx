@@ -1,27 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Poster, Link, Title, ListItem } from './MovieCard.styled';
-import { useLocation } from 'react-router-dom';
+import { Poster } from './MovieCard.styled';
 
-export const MovieCard = ({ posterPath, title, movieId }) => {
-  const location = useLocation();
+export const MovieCard = ({ movieId, title, posterPath }) => {
   const filmPosterSrc = `https://image.tmdb.org/t/p/w500/${posterPath}`;
   return (
-    <ListItem>
-      <Link to={`/movies/${movieId}`} state={{ from: location }}>
-        <Poster
-          src={posterPath ? filmPosterSrc : 'noPoster'}
-          alt={title}
-          height="510"
-        />
-        <Title>{title}</Title>
-      </Link>
-    </ListItem>
+    <li>
+      <Poster
+        src={posterPath ? filmPosterSrc : 'No Poster'}
+        alt={title}
+        height="500"
+      />
+    </li>
   );
-};
-
-MovieCard.propTypes = {
-  posterPath: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  movieId: PropTypes.number.isRequired,
 };

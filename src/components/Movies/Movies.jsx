@@ -1,17 +1,16 @@
-import { useState } from 'react';
-import { fetchQuery } from '../../service/fetchService';
-import {
-  List,
-  Container,
-  FormInput,
-  FormBtnLabel,
-  FormBtn,
-  Form,
-} from '../Movies/Movies.styled';
-import { useSearchParams } from 'react-router-dom';
-import { useEffect } from 'react';
-import { ErrorSearch } from '../ErrorSearch/ErrorSearch';
+import { ErrorSearch } from 'components/ErrorSearch/ErrorSearch';
 import { MovieCard } from 'components/MovieCard/MovieCard';
+import { useEffect, useState } from 'react';
+
+import { Form, useSearchParams } from 'react-router-dom';
+import { fetchQuery } from 'service/fetchService';
+import {
+  Container,
+  FormBtn,
+  FormBtnLabel,
+  FormInput,
+  List,
+} from './Movies.styled';
 
 const Movies = () => {
   const [query, setQuery] = useState('');
