@@ -46,43 +46,45 @@ const Movies = () => {
     setQuery('');
   };
   return (
-    <Container>
-      <Form onSubmit={formSubmit}>
-        <label>
-          <FormInput
-            value={query}
-            type="text"
-            autoComplete="off"
-            autoFocus
-            placeholder="Search movies"
-            onInput={onInputValue}
+    <main>
+      <Container>
+        <Form onSubmit={formSubmit}>
+          <label>
+            <FormInput
+              value={query}
+              type="text"
+              autoComplete="off"
+              autoFocus
+              placeholder="Search movies"
+              onInput={onInputValue}
+            />
+          </label>
+          <FormBtn type="submit">
+            <FormBtnLabel>Search</FormBtnLabel>
+          </FormBtn>
+        </Form>
+        {status === 'resolved' && films.length > 0 && (
+          <List>
+            {films.map(film => {
+              const { id, poster_path, title, name } = film;
+              return (
+                <MovieCard
+                  key={id}
+                  posterPath={poster_path}
+                  title={title ?? name}
+                  movieId={id}
+                />
+              );
+            })}
+          </List>
+        )}
+        {status === 'no-results' && (
+          <ErrorSearch
+            message={`Sorry, we did not find any movies for "${searchQuery}"`}
           />
-        </label>
-        <FormBtn type="submit">
-          <FormBtnLabel>Search</FormBtnLabel>
-        </FormBtn>
-      </Form>
-      {status === 'resolved' && films.length > 0 && (
-        <List>
-          {films.map(film => {
-            const { id, poster_path, title, name } = film;
-            return (
-              <MovieCard
-                key={id}
-                posterPath={poster_path}
-                title={title ?? name}
-                movieId={id}
-              />
-            );
-          })}
-        </List>
-      )}
-      {status === 'no-results' && (
-        <ErrorSearch
-          message={`Sorry, we did not find any movies for "${searchQuery}"`}
-        />
-      )}
-    </Container>
+        )}
+      </Container>
+    </main>
   );
 };
 export default Movies;

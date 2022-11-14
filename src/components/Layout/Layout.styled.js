@@ -22,4 +22,5 @@ export const Div = styled.div`
 background-color: aqua;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 `;
