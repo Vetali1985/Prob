@@ -9,8 +9,8 @@ const Layout = () => {
       <StyledLink to="/" end>
         Home
       </StyledLink>
-      <StyledLink to="movies">Movies</StyledLink>
-      {/* <Home /> */}
+      <StyledLink to="/movies">Movies</StyledLink>
+
       <Outlet />
     </Div>
   );
