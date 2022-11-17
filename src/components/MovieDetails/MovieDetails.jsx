@@ -5,7 +5,7 @@ import { LinkBtn, Wrapper } from './MovieDetails.styled';
 import { MovieDetailsCard } from './MovieDetailsCard';
 
 import { Container } from 'components/Movies/Movies.styled';
-import { fetchDetails } from 'service/fetchService';
+import { fetchDetails } from '../../service/fetchService';
 
 const MovieDetails = () => {
   const [film, setFilm] = useState({});

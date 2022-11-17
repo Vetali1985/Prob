@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
 import { CastItem, CastList } from './Cast.styled';
-import { fetchCast } from 'service/fetchService';
+import { fetchCast } from '../../service/fetchService';
 
 const Cast = () => {
   const [filmCast, setFilmCast] = useState([]);

@@ -1,37 +1,27 @@
-import { Routes, Route } from 'react-router-dom';
-import React, { lazy } from 'react';
-
+import { Route, Routes } from 'react-router-dom';
+import Home from './Home/Home';
 import Layout from './Layout/Layout';
-import { Div, StyledLink } from './Layout/Layout.styled';
-
-const Cast = lazy(() => import('./Cast/Cast'));
-const Home = lazy(() => import('./Home/Home'));
-const MovieDetails = lazy(() => import('./MovieDetails/MovieDetails'));
-const Movies = lazy(() => import('./Movies/Movies'));
-const Reviews = lazy(() => import('./Reviews/Reviews'));
+import Movies from './Movies/Movies';
 
 export const App = () => {
   return (
-    <>
-      {/* <Div>
-        <StyledLink to="/" end>
-          Home
-        </StyledLink>
-        <StyledLink to="movies">Movies</StyledLink>
-      </Div> */}
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="movies" element={<Movies />} />
-        </Route>
+    // <div
+    //   style={{
+    //     height: '100vh',
+    //     display: 'flex',
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     fontSize: 40,
+    //     color: '#010101'
+    //   }}
+    // >
 
-        <Route path="movies/:movieId" element={<MovieDetails />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
-        </Route>
-      </Routes>
-    </>
+    // </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="home" element={<Home />} />
+        <Route path="movies" element={<Movies />} />
+      </Route>
+    </Routes>
   );
 };
-{
-}

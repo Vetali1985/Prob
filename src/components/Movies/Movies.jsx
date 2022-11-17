@@ -11,7 +11,7 @@ import {
 import { useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
 
-import { fetchQuery } from 'service/fetchService';
+import { fetchQuery } from '../../service/fetchService';
 import { MovieCard } from 'components/MovieCard/MovieCard';
 import { ErrorSearch } from 'components/ErrorSearch/ErrorSearch';
 
