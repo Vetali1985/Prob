@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import img from '../../images/search.svg';
+
 
 export const Container = styled.div`
   padding-top: 120px;
@@ -30,24 +30,15 @@ export const Form = styled.form`
 `;
 export const FormBtn = styled.button`
   display: inline-block;
-  width: 48px;
   height: 48px;
   border: 0;
-  
-  background-size: 40%;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.6;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  outline: none;
-  &:hover {
-    opacity: 1;
-  }
+  background-color:orange;
+  color:white;
+  cursor: pointer; 
+  padding:16px;
 `;
 export const FormInput = styled.input`
   display: inline-block;
-  width: 550px;
   font: inherit;
   font-size: 20px;
   border: none;
@@ -60,14 +51,3 @@ export const FormInput = styled.input`
   }
 `;
 
-export const FormBtnLabel = styled.span`
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  clip-path: inset(50%);
-  border: 0;
-`;

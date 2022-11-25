@@ -1,19 +1,11 @@
 import { useState } from 'react';
+import { fetchQuery } from '../../service/fetchService';
 
-import {
-  List,
-  Container,
-  FormInput,
-  FormBtnLabel,
-  FormBtn,
-  Form,
-} from './Movies.styled';
+import { List, Container, FormInput, FormBtn, Form } from './Movies.styled';
 import { useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
-
-import { fetchQuery } from '../../service/fetchService';
-import { MovieCard } from 'components/MovieCard/MovieCard';
 import { ErrorSearch } from 'components/ErrorSearch/ErrorSearch';
+import { MovieCard } from 'components/MovieCard/MovieCard';
 
 const Movies = () => {
   const [query, setQuery] = useState('');
@@ -46,45 +38,41 @@ const Movies = () => {
     setQuery('');
   };
   return (
-    <main>
-      <Container>
-        <Form onSubmit={formSubmit}>
-          <label>
-            <FormInput
-              value={query}
-              type="text"
-              autoComplete="off"
-              autoFocus
-              placeholder="Search movies"
-              onInput={onInputValue}
-            />
-          </label>
-          <FormBtn type="submit">
-            <FormBtnLabel>Search</FormBtnLabel>
-          </FormBtn>
-        </Form>
-        {status === 'resolved' && films.length > 0 && (
-          <List>
-            {films.map(film => {
-              const { id, poster_path, title, name } = film;
-              return (
-                <MovieCard
-                  key={id}
-                  posterPath={poster_path}
-                  title={title ?? name}
-                  movieId={id}
-                />
-              );
-            })}
-          </List>
-        )}
-        {status === 'no-results' && (
-          <ErrorSearch
-            message={`Sorry, we did not find any movies for "${searchQuery}"`}
+    <Container>
+      <Form onSubmit={formSubmit}>
+        <label>
+          <FormInput
+            value={query}
+            type="text"
+            autoComplete="off"
+            autoFocus
+            placeholder="Search movies"
+            onInput={onInputValue}
           />
-        )}
-      </Container>
-    </main>
+        </label>
+        <FormBtn type="submit">Search</FormBtn>
+      </Form>
+      {status === 'resolved' && films.length > 0 && (
+        <List>
+          {films.map(film => {
+            const { id, poster_path, title, name } = film;
+            return (
+              <MovieCard
+                key={id}
+                posterPath={poster_path}
+                title={title ?? name}
+                movieId={id}
+              />
+            );
+          })}
+        </List>
+      )}
+      {status === 'no-results' && (
+        <ErrorSearch
+          message={`Sorry, we did not find any movies for "${searchQuery}"`}
+        />
+      )}
+    </Container>
   );
 };
 export default Movies;

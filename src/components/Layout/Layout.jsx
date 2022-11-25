@@ -1,5 +1,3 @@
-// import Home from 'components/Home/Home';
-// import Movies from 'components/Movies/Movies';
 import { Outlet } from 'react-router-dom';
 import { Div, StyledLink } from './Layout.styled';
 

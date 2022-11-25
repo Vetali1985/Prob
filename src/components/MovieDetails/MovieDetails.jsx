@@ -3,9 +3,8 @@ import { useEffect } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { LinkBtn, Wrapper } from './MovieDetails.styled';
 import { MovieDetailsCard } from './MovieDetailsCard';
-
-import { Container } from 'components/Movies/Movies.styled';
 import { fetchDetails } from '../../service/fetchService';
+import { Container } from 'components/Movies/Movies.styled';
 
 const MovieDetails = () => {
   const [film, setFilm] = useState({});
