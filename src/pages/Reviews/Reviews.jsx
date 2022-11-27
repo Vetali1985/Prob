@@ -18,17 +18,14 @@ const Reviews = () => {
 
   return (
     <Wrapper>
-      {reviews.length > 0 ? (
+      {!!reviews.length ? (
         <ul>
-          {reviews.map(review => {
-            const { id, author, content } = review;
-            return (
-              <li key={id}>
-                <h2>Author: {author}</h2>
-                <p>{content}</p>
-              </li>
-            );
-          })}
+          {reviews.map(review => (
+            <li key={review.id}>
+              <h2>Author: {review.author}</h2>
+              <p>{review.content}</p>
+            </li>
+          ))}
         </ul>
       ) : (
         <Paragraf>We don't have any reviews for this movie</Paragraf>

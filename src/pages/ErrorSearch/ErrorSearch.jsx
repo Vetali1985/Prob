@@ -1,7 +1,1 @@
-export const ErrorSearch = ({ message }) => {
-  return (
-    <>
-      <p>{message}</p>
-    </>
-  );
-};
+export const ErrorSearch = ({ message }) => <p>{message}</p>;

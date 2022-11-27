@@ -1,10 +1,12 @@
-import React, { Suspense, useState } from 'react';
-import { useEffect } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
-import { LinkBtn, Wrapper } from './MovieDetails.styled';
+
 import { MovieDetailsCard } from './MovieDetailsCard';
+
 import { fetchDetails } from '../../service/fetchService';
+
 import { Container } from 'pages/Movies/Movies.styled';
+import { LinkBtn, Wrapper } from './MovieDetails.styled';
 
 const MovieDetails = () => {
   const [film, setFilm] = useState({});
