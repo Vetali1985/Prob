@@ -18,7 +18,7 @@ export const StyledLink = styled(NavLink)`
     background-color:white;
   }
 `;
-export const Wrapper = styled.div`
+export const LayoutWrapper = styled.div`
 background-color: aqua;
     display: flex;
     justify-content: center;
