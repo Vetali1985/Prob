@@ -20,4 +20,3 @@ export const App = () => {
     </Routes>
   );
 };
-console.log('123');
