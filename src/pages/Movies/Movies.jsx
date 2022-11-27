@@ -4,8 +4,8 @@ import { fetchQuery } from '../../service/fetchService';
 import { List, Container, FormInput, FormBtn, Form } from './Movies.styled';
 import { useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import { ErrorSearch } from 'components/ErrorSearch/ErrorSearch';
-import { MovieCard } from 'components/MovieCard/MovieCard';
+import { ErrorSearch } from 'pages/ErrorSearch/ErrorSearch';
+import { MovieCard } from 'pages/MovieCard/MovieCard';
 
 const Movies = () => {
   const [query, setQuery] = useState('');

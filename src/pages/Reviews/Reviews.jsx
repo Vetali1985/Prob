@@ -1,4 +1,4 @@
-import { Wrapper } from 'components/MovieDetails/MovieDetails.styled';
+import { Wrapper } from 'pages/MovieDetails/MovieDetails.styled';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';

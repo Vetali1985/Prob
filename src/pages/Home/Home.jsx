@@ -1,5 +1,5 @@
-import { List } from 'components/Home/Home.styled';
-import { MovieCard } from 'components/MovieCard/MovieCard';
+import { List } from 'pages/Home/Home.styled';
+import { MovieCard } from 'pages/MovieCard/MovieCard';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { fetchPopularFilms } from '../../service/fetchService';
