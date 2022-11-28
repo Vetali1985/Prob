@@ -1,7 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Poster, Link, Title, ListItem } from './MovieCard.styled';
 import { useLocation } from 'react-router-dom';
+
+import PropTypes from 'prop-types';
+
+import { Poster, Link, Title, ListItem } from './MovieCard.styled';
 
 export const MovieCard = ({ posterPath, title, movieId }) => {
   const location = useLocation();

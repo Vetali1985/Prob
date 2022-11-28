@@ -17,7 +17,7 @@ const MovieDetails = () => {
     if (!movieId) return;
 
     fetchDetails(movieId)
-      .then(setFilm(movieId))
+      .then(setFilm)
 
       .catch(e => console.log(e.message));
   }, [movieId]);

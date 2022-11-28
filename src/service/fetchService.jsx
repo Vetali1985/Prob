@@ -1,7 +1,8 @@
 import axios from 'axios';
+
+const URL = 'https://api.themoviedb.org/3/';
 export async function fetchPopularFilms() {
-  const url =
-    'https://api.themoviedb.org/3/trending/all/day?api_key=d6e97164aaa08d2091b81af2621a507c';
+  const url = `${URL}trending/all/day?api_key=d6e97164aaa08d2091b81af2621a507c`;
   const resp = await axios.get(url);
   const data = await resp.data;
   const filmsArr = await data.results;
@@ -10,7 +11,7 @@ export async function fetchPopularFilms() {
 }
 
 export async function fetchQuery(searchQuery) {
-  const url = `https://api.themoviedb.org/3/search/movie?api_key=d6e97164aaa08d2091b81af2621a507c&language=en-US&query=${searchQuery}&page=1&include_adult=false`;
+  const url = `${URL}search/movie?api_key=d6e97164aaa08d2091b81af2621a507c&language=en-US&query=${searchQuery}&page=1&include_adult=false`;
   const resp = await axios.get(url);
   const data = await resp.data;
   const filmsArr = await data.results;
@@ -19,15 +20,15 @@ export async function fetchQuery(searchQuery) {
 }
 
 export async function fetchDetails(id) {
-  const url = `https://api.themoviedb.org/3/movie/${id}?api_key=d6e97164aaa08d2091b81af2621a507c&language=en-US`;
+  const url = `${URL}movie/${id}?api_key=d6e97164aaa08d2091b81af2621a507c&language=en-US`;
   const resp = await axios.get(url);
   const data = await resp.data;
-
+  console.log(data);
   return data;
 }
 
 export async function fetchReviews(id) {
-  const url = `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=d6e97164aaa08d2091b81af2621a507c&language=en-US&page=1`;
+  const url = `${URL}movie/${id}/reviews?api_key=d6e97164aaa08d2091b81af2621a507c&language=en-US&page=1`;
   const resp = await axios.get(url);
   const data = await resp.data;
   const filmsArr = await data.results;
@@ -36,7 +37,7 @@ export async function fetchReviews(id) {
 }
 
 export async function fetchCast(movieId) {
-  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=d6e97164aaa08d2091b81af2621a507c&language=en-US`;
+  const url = `${URL}movie/${movieId}/credits?api_key=d6e97164aaa08d2091b81af2621a507c&language=en-US`;
   const resp = await axios.get(url);
   const data = await resp.data;
   const filmCast = await data.cast;

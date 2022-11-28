@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
-import Cast from '../pages/Cast/Cast';
+import Cast from './Cast/Cast';
 import Home from '../pages/Home/Home';
 import Layout from './Layout/Layout';
-import MovieDetails from '../pages/MovieDetails/MovieDetails';
+import MovieDetails from './MovieDetails/MovieDetails';
 import Movies from '../pages/Movies/Movies';
-import Reviews from '../pages/Reviews/Reviews';
+import Reviews from './Reviews/Reviews';
 
 export const App = () => {
   return (

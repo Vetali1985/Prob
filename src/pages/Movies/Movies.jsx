@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+import { useSearchParams } from 'react-router-dom';
+
+import { ErrorSearch } from 'components/ErrorSearch/ErrorSearch';
+import { MovieCard } from 'pages/MovieCard/MovieCard';
+
 import { fetchQuery } from '../../service/fetchService';
 
 import { List, Container, FormInput, FormBtn, Form } from './Movies.styled';
-import { useSearchParams } from 'react-router-dom';
-import { useEffect } from 'react';
-import { ErrorSearch } from 'pages/ErrorSearch/ErrorSearch';
-import { MovieCard } from 'pages/MovieCard/MovieCard';
 
 const Movies = () => {
   const [query, setQuery] = useState('');
@@ -55,13 +57,13 @@ const Movies = () => {
       {status === 'resolved' && films.length > 0 && (
         <List>
           {films.map(film => {
-            const { id, poster_path, title, name } = film;
+            // const { id, poster_path, title, name } = film;
             return (
               <MovieCard
-                key={id}
-                posterPath={poster_path}
-                title={title ?? name}
-                movieId={id}
+                key={film.id}
+                posterPath={film.poster_path}
+                title={film.title ?? film.name}
+                movieId={film.id}
               />
             );
           })}
