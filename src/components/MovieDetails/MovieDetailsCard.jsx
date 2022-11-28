@@ -1,5 +1,6 @@
-import { Descr, Poster, Wrapper } from './MovieDetails.styled';
 import PropTypes from 'prop-types';
+
+import { Descr, Poster, Wrapper } from './MovieDetails.styled';
 
 export const MovieDetailsCard = ({
   poster_path,

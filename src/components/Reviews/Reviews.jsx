@@ -1,9 +1,10 @@
-import { Wrapper } from 'components/MovieDetails/MovieDetails.styled';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import { useParams } from 'react-router-dom';
 import { fetchReviews } from '../../service/fetchService';
+
 import { Paragraf } from './Reviews.styled';
+import { Wrapper } from 'components/MovieDetails/MovieDetails.styled';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import { fetchCast } from '../../service/fetchService';
 import { useParams } from 'react-router-dom';
+
+import { fetchCast } from '../../service/fetchService';
+
 import { CastItem, CastList } from './Cast.styled';
 
 const Cast = () => {

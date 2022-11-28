@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+
 import { LayoutWrapper, StyledLink } from './Layout.styled';
 
 const Layout = () => {
